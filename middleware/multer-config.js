@@ -31,7 +31,7 @@ exports.imgResize = async (req, res, next) => {
         const path = `./images/${newName}`;
 
         await sharp(req.file.buffer)
-            .resize(207, 260)
+            .resize(576, 316)
             .toFile(path);
         res.locals.newName = newName;
         next();
