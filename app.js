@@ -37,4 +37,7 @@ app.use('/api/works', worksRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
+//Fix req.protocol error. Upgrade http to https by trusting the proxy.
+app.enable('trust proxy');
+
 module.exports = app;
